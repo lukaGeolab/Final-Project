@@ -20,9 +20,6 @@ class SignUpViewController: UIViewController {
     @IBOutlet var signUpButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
     
-    var favorites = [String]()
-    var downloads = [String]()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
@@ -83,8 +80,8 @@ class SignUpViewController: UIViewController {
                         
                         // User was created successfully, now store the first name and last name
                         let db = Firestore.firestore()
-                        let newDocument = db.collection("users").document()
-                        newDocument.setData(["firstname":firstName,"lastname":lastName,"uid": result!.user.uid,"id":newDocument.documentID, "favorites":self.favorites,"downloads":self.downloads]) { (error) in
+                        let newDocument = db.collection("users").document(result!.user.uid)
+                        newDocument.setData(["firstname":firstName,"lastname":lastName,"favorites": [],"downloads": []]) { (error) in
                             if error != nil {
                                 // Show error message
                                 self.showError("Error saving user data")

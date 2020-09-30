@@ -19,7 +19,7 @@ class ImageViewController: UIViewController {
     let photosCollection = Firestore.firestore().collection("photos")
     var homeTitle = String()
     var images: [UIImage] = []
-    var users = [Users]()
+    var users = [UserData]()
     let userCollection = Firestore.firestore().collection("users")
 
     
@@ -46,29 +46,6 @@ class ImageViewController: UIViewController {
                     PhotoData.photoDatas = array
                 }
                 self.imageCollectionView.reloadData()
-            }
-        }
-        userCollection.getDocuments { (snapshot, error) in
-            if let err = error {
-                debugPrint(err)
-            } else {
-                guard let snap = snapshot else { return }
-                for document in snap.documents {
-                    let data = document.data()
-                    let uid = data["uid"] as? String ?? "Anonymous"
-                    let dataFirstName = data["firstname"] as? String ?? "Anonymous"
-                    let dataLastName = data["lastname"] as? String ?? "Anonymous"
-                    let id = data["id"] as? String ?? "Anonymous"
-                    let favorites = data["favorites"] as? [String] ?? []
-                    let downloads = data["downloads"] as? [String] ?? []
-                    let newUser = Users(uid: uid, firstName: dataFirstName, lastName: dataLastName, id: id, favorites: favorites, downloads: downloads)
-                    self.users.append(newUser)
-                    for user in self.users {
-                        if Auth.auth().currentUser?.uid == user.uid {
-                            FavData.favData = user.favorites
-                        }
-                    }
-                }
             }
         }
     }

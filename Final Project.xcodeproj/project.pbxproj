@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A900DD0A24B8EA3600C6557C /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD0824B8EA3600C6557C /* HomeTableViewCell.swift */; };
-		A900DD0B24B8EA3600C6557C /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A900DD0924B8EA3600C6557C /* HomeTableViewCell.xib */; };
+		41E1E8FE2524C45E00119A8D /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 41E1E8FD2524C45E00119A8D /* Home.storyboard */; };
+		41E1E9032524C74A00119A8D /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41E1E9012524C74A00119A8D /* HomeCell.swift */; };
+		41E1E9042524C74A00119A8D /* HomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 41E1E9022524C74A00119A8D /* HomeCell.xib */; };
 		A900DD0E24BD0E8000C6557C /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A900DD0C24BD0E8000C6557C /* HomeTableViewController.swift */; };
-		A900DD0F24BD0E8000C6557C /* HomeTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A900DD0D24BD0E8000C6557C /* HomeTableViewController.xib */; };
 		A90CCDC52520BD6E00DA5F26 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A90CCDC32520BD6E00DA5F26 /* PhotoViewController.swift */; };
 		A90CCDC62520BD6E00DA5F26 /* PhotoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A90CCDC42520BD6E00DA5F26 /* PhotoViewController.xib */; };
-		A91CBBFD24F00C4D00230EF6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CBBFC24F00C4D00230EF6 /* Users.swift */; };
+		A91CBBFD24F00C4D00230EF6 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A91CBBFC24F00C4D00230EF6 /* UserData.swift */; };
 		A92A38C724DC2DF700EB5967 /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A92A38C524DC2DF700EB5967 /* SearchTableViewCell.swift */; };
 		A92A38C824DC2DF700EB5967 /* SearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A92A38C624DC2DF700EB5967 /* SearchTableViewCell.xib */; };
 		A932CD2725065E9F00BE9DA0 /* DownloadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A932CD2525065E9F00BE9DA0 /* DownloadedViewController.swift */; };
@@ -54,15 +54,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		41E1E8FD2524C45E00119A8D /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		41E1E9012524C74A00119A8D /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		41E1E9022524C74A00119A8D /* HomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeCell.xib; sourceTree = "<group>"; };
 		58F72D02A205D41018BCB15E /* Pods-Final Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.release.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.release.xcconfig"; sourceTree = "<group>"; };
 		9B0FC72DDF169597293FB060 /* Pods-Final Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Final Project.debug.xcconfig"; path = "Target Support Files/Pods-Final Project/Pods-Final Project.debug.xcconfig"; sourceTree = "<group>"; };
-		A900DD0824B8EA3600C6557C /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
-		A900DD0924B8EA3600C6557C /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		A900DD0C24BD0E8000C6557C /* HomeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
-		A900DD0D24BD0E8000C6557C /* HomeTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewController.xib; sourceTree = "<group>"; };
 		A90CCDC32520BD6E00DA5F26 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		A90CCDC42520BD6E00DA5F26 /* PhotoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoViewController.xib; sourceTree = "<group>"; };
-		A91CBBFC24F00C4D00230EF6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A91CBBFC24F00C4D00230EF6 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A92A38C524DC2DF700EB5967 /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		A92A38C624DC2DF700EB5967 /* SearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTableViewCell.xib; sourceTree = "<group>"; };
 		A932CD2525065E9F00BE9DA0 /* DownloadedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedViewController.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				A900DD0C24BD0E8000C6557C /* HomeTableViewController.swift */,
-				A900DD0D24BD0E8000C6557C /* HomeTableViewController.xib */,
+				41E1E8FD2524C45E00119A8D /* Home.storyboard */,
 				A900DD0724B8EA0100C6557C /* Home Cell */,
 			);
 			path = Home;
@@ -138,8 +138,8 @@
 		A900DD0724B8EA0100C6557C /* Home Cell */ = {
 			isa = PBXGroup;
 			children = (
-				A900DD0824B8EA3600C6557C /* HomeTableViewCell.swift */,
-				A900DD0924B8EA3600C6557C /* HomeTableViewCell.xib */,
+				41E1E9012524C74A00119A8D /* HomeCell.swift */,
+				41E1E9022524C74A00119A8D /* HomeCell.xib */,
 			);
 			path = "Home Cell";
 			sourceTree = "<group>";
@@ -178,7 +178,7 @@
 			children = (
 				A939325A24D843D400C3DACA /* UserViewController.swift */,
 				A939325B24D843D400C3DACA /* UserViewController.xib */,
-				A91CBBFC24F00C4D00230EF6 /* Users.swift */,
+				A91CBBFC24F00C4D00230EF6 /* UserData.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -402,18 +402,18 @@
 				A9CFE7CD24B79D68006DF9A8 /* LaunchScreen.storyboard in Resources */,
 				A9CFE7DC24B7A158006DF9A8 /* TabBarController.xib in Resources */,
 				A9CFE7CA24B79D68006DF9A8 /* Assets.xcassets in Resources */,
-				A900DD0B24B8EA3600C6557C /* HomeTableViewCell.xib in Resources */,
 				A9C2B73D24F2B8BD00301077 /* FavoritesViewController.xib in Resources */,
 				A939326F24D8989000C3DACA /* LogInViewController.xib in Resources */,
 				A97CA43024D9B67900BA5556 /* SignUpViewController.xib in Resources */,
 				A9CC097524DC65AD00AB7787 /* SearchTableViewController.xib in Resources */,
-				A900DD0F24BD0E8000C6557C /* HomeTableViewController.xib in Resources */,
 				A939325D24D843D400C3DACA /* UserViewController.xib in Resources */,
 				A9CC099224E0160000AB7787 /* ImageViewController.xib in Resources */,
 				A932CD2825065E9F00BE9DA0 /* DownloadedViewController.xib in Resources */,
+				41E1E8FE2524C45E00119A8D /* Home.storyboard in Resources */,
 				A9CFE7C824B79D67006DF9A8 /* Main.storyboard in Resources */,
 				A9F587DE2500EF0300CDC8B2 /* PurchaseViewController.xib in Resources */,
 				A90CCDC62520BD6E00DA5F26 /* PhotoViewController.xib in Resources */,
+				41E1E9042524C74A00119A8D /* HomeCell.xib in Resources */,
 				A939326624D8948100C3DACA /* SignInViewController.xib in Resources */,
 				A983F53224CB3981006AA548 /* GoogleService-Info.plist in Resources */,
 				A92A38C824DC2DF700EB5967 /* SearchTableViewCell.xib in Resources */,
@@ -493,15 +493,15 @@
 				A939325C24D843D400C3DACA /* UserViewController.swift in Sources */,
 				A93768C824FD158D00FE9763 /* DownloadsViewController.swift in Sources */,
 				A900DD0E24BD0E8000C6557C /* HomeTableViewController.swift in Sources */,
+				41E1E9032524C74A00119A8D /* HomeCell.swift in Sources */,
 				A9F587E02504F5A200CDC8B2 /* FavData.swift in Sources */,
 				A9CC097424DC65AD00AB7787 /* SearchTableViewController.swift in Sources */,
-				A900DD0A24B8EA3600C6557C /* HomeTableViewCell.swift in Sources */,
 				A9B6599B24D43F6D00EA10C8 /* Utilities.swift in Sources */,
 				A9CC099124E0160000AB7787 /* ImageViewController.swift in Sources */,
 				A9CFE7C524B79D67006DF9A8 /* ViewController.swift in Sources */,
 				A9F587DD2500EF0300CDC8B2 /* PurchaseViewController.swift in Sources */,
 				A9C2B73C24F2B8BD00301077 /* FavoritesViewController.swift in Sources */,
-				A91CBBFD24F00C4D00230EF6 /* Users.swift in Sources */,
+				A91CBBFD24F00C4D00230EF6 /* UserData.swift in Sources */,
 				A9CFE7DB24B7A158006DF9A8 /* TabBarController.swift in Sources */,
 				A92A38C724DC2DF700EB5967 /* SearchTableViewCell.swift in Sources */,
 				A9CC098D24E0157C00AB7787 /* CollectionViewCell.swift in Sources */,

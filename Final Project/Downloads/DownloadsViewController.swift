@@ -14,45 +14,25 @@ import FirebaseFirestore
 class DownloadsViewController: UIViewController {
 
     @IBOutlet var downImagesCollectionView: UICollectionView!
-    let userCollection = Firestore.firestore().collection("users")
-    var users = [Users]()
+    
     var downImagesUrl = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+        getDownloads()
+    }
+    
+    func setupCollectionView() {
         downImagesCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         downImagesCollectionView.dataSource = self
         downImagesCollectionView.delegate = self
     }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        userCollection.getDocuments { (snapshot, error) in
-            if let err = error {
-                debugPrint(err)
-            } else {
-                guard let snap = snapshot else { return }
-                for document in snap.documents {
-                    let data = document.data()
-                    let uid = data["uid"] as? String ?? "Anonymous"
-                    let dataFirstName = data["firstname"] as? String ?? "Anonymous"
-                    let dataLastName = data["lastname"] as? String ?? "Anonymous"
-                    let id = data["id"] as? String ?? "Anonymous"
-                    let favorites = data["favorites"] as? [String] ?? ["Anonymous"]
-                    let downloads = data["downloads"] as? [String] ?? ["Anonymous"]
-                    let newUser = Users(uid: uid, firstName: dataFirstName, lastName: dataLastName, id: id, favorites: favorites, downloads: downloads)
-                    self.users.append(newUser)
-                }
-                for user in self.users {
-                    if user.uid == Auth.auth().currentUser?.uid {
-                        for fav in user.downloads {
-                            if self.downImagesUrl.contains(fav) == false {
-                                self.downImagesUrl.append(fav)
-                            }
-                        }
-                    }
-                }
-                self.downImagesCollectionView.reloadData()
-            }
+    
+    func getDownloads() {
+        FavData.getCurrentUserData { [weak self] userData in
+            self?.downImagesUrl = userData.downloads
+            self?.downImagesCollectionView.reloadData()
         }
     }
 }

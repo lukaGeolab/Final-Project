@@ -12,15 +12,17 @@ import Firebase
 import FirebaseFirestore
 import Kingfisher
 
-class HomeTableViewController: UITableViewController {
+class HomeTableViewController: UIViewController {
     
     let photosCollection = Firestore.firestore().collection("mainPhotos")
     var categories = ["Animals","Architecture","Art","City","Design","Outdoors","Food","Space","Sport","People","Transport","Vintage"]
     var urls = [String]()
     
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "HomeTableViewCell", bundle: nil), forCellReuseIdentifier: "HomeTableViewCell")
+        tableView.register(UINib(nibName: "HomeCell", bundle: nil), forCellReuseIdentifier: "HomeCell")
         
         photosCollection.getDocuments { (snapshot, error) in
             if let err = error {
@@ -38,22 +40,28 @@ class HomeTableViewController: UITableViewController {
             }
         }
     }
+}
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+extension HomeTableViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        400
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         urls.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        tableView.dequeueReusableCell(withIdentifier: "HomeTableViewCell", for: indexPath)
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath)
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        
-        (cell as? HomeTableViewCell)?.homeImageView.kf.setImage(with: URL(string: urls[indexPath.row]), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        (cell as? HomeTableViewCell)?.setTitle(categories[indexPath.row])
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        (cell as? HomeCell)?.img.kf.setImage(with: URL(string: urls[indexPath.row]), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        (cell as? HomeCell)?.titleLbl.text = categories[indexPath.row]
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ImageViewController(nibName: "ImageViewController", bundle: nil)
         vc.homeTitle = categories[indexPath.row]
         vc.hidesBottomBarWhenPushed = true

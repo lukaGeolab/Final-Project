@@ -13,49 +13,39 @@ import FirebaseFirestore
 
 class FavoritesViewController: UIViewController {
     
+    //MARK: Class variables
+    
+    var favImagesUrl = [String]()
+    
+    
+    //MARK: IBOutlets
     
     @IBOutlet var favImageCollectionView: UICollectionView!
-    let userCollection = Firestore.firestore().collection("users")
-    var users = [Users]()
-    var favImagesUrl = [String]()
-    var images = [UIImage]()
+    
+    //MARK: View life cycle
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupCollectionView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getFavData()
+    }
+    
+    //MARK: View setup
+    
+    func setupCollectionView() {
         favImageCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         favImageCollectionView.dataSource = self
         favImageCollectionView.delegate = self
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(true)
-        userCollection.getDocuments { (snapshot, error) in
-            if let err = error {
-                debugPrint(err)
-            } else {
-                guard let snap = snapshot else { return }
-                for document in snap.documents {
-                    let data = document.data()
-                    let uid = data["uid"] as? String ?? "Anonymous"
-                    let dataFirstName = data["firstname"] as? String ?? "Anonymous"
-                    let dataLastName = data["lastname"] as? String ?? "Anonymous"
-                    let id = data["id"] as? String ?? "Anonymous"
-                    let favorites = data["favorites"] as? [String] ?? ["Anonymous"]
-                    let downloads = data["downloads"] as? [String] ?? []
-                    let newUser = Users(uid: uid, firstName: dataFirstName, lastName: dataLastName, id: id, favorites: favorites, downloads: downloads)
-                    self.users.append(newUser)
-                }
-                for user in self.users {
-                    if user.uid == Auth.auth().currentUser?.uid {
-                        if self.favImagesUrl != user.favorites {
-                            self.favImagesUrl = user.favorites
-                            FavData.favData = user.favorites
-                        }
-                    }
-                }
-//                self.users = []
-                self.favImageCollectionView.reloadData()
-            }
+    func getFavData() {
+        FavData.getCurrentUserData { [weak self] userData in
+            self?.favImagesUrl = userData.favorites
+            self?.favImageCollectionView.reloadData()
         }
     }
 }
