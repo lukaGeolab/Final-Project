@@ -32,6 +32,7 @@ class ImageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        PhotoData.photoDatas = []
         imageCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
         imageCollectionView.dataSource = self
         imageCollectionView.delegate = self
