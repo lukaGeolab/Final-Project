@@ -51,6 +51,9 @@ class ImageViewController: UIViewController {
         }
     }
 }
+
+    //MARK: View setup
+
 extension ImageViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         PhotoData.photoDatas.count

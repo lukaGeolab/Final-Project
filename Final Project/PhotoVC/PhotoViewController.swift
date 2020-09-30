@@ -13,15 +13,36 @@ import FirebaseFirestore
 
 class PhotoViewController: UIViewController {
 
-    @IBOutlet var removeFavBtn: UIButton!
-    @IBOutlet var addFavBtn: UIButton!
+    //MARK: Class variables
+
     var photoUrl = String()
     let userCollection = Firestore.firestore().collection("users")
-    var favorites = [String]()
+    var purchasedPhotos = [String]()
+    
+    //MARK: IBOutlets
+    
+    @IBOutlet var removeFavBtn: UIButton!
+    @IBOutlet var addFavBtn: UIButton!
+    @IBOutlet var photoImageView: UIImageView!
+
+    //MARK: View life cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Purchase", style: .plain, target: self, action: #selector(purchaseClicked))
+        photoImageView.kf.setImage(with: URL(string: photoUrl), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
+        configureFavoriteState()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getPurchasedData()
+    }
+    
+    //MARK: View setup
     
     @objc func purchaseClicked() {
         let vc = PurchaseViewController(nibName: "PurchaseViewController", bundle: nil)
-        if PhotoData.purchasedPhoto.contains(photoUrl) {
+        if purchasedPhotos.contains(photoUrl) {
             let alert = UIAlertController(title: "You've already purchased this photo", message: nil, preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -30,16 +51,7 @@ class PhotoViewController: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
     }
-    
-    @IBOutlet var photoImageView: UIImageView!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Purchase", style: .plain, target: self, action: #selector(purchaseClicked))
-        photoImageView.kf.setImage(with: URL(string: photoUrl), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
-        configureFavoriteState()
-    }
-    
     @IBAction func addFavBtnClicked(_ sender: Any) {
         self.addFavBtn.isHidden.toggle()
         self.removeFavBtn.isHidden.toggle()
@@ -61,6 +73,12 @@ class PhotoViewController: UIViewController {
             let isFavorite = userData.favorites.contains(photoUrl)
             self?.addFavBtn.isHidden = isFavorite
             self?.removeFavBtn.isHidden = !isFavorite
+        }
+    }
+    
+    func getPurchasedData() {
+        FavData.getCurrentUserData { [weak self] userData in
+            self?.purchasedPhotos = userData.downloads
         }
     }
 }

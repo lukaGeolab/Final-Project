@@ -10,8 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignInViewController" customModule="Final_Project" customModuleProvider="target">
             <connections>
-                <outlet property="LogInButton" destination="76Y-p7-QR7" id="RDx-CH-wdL"/>
-                <outlet property="RegistrationButton" destination="SqE-pS-pXH" id="a0J-rG-7TI"/>
+                <outlet property="logInButton" destination="76Y-p7-QR7" id="RDx-CH-wdL"/>
+                <outlet property="registrationButton" destination="SqE-pS-pXH" id="a0J-rG-7TI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Uvp-Zi-6pr"/>
             </connections>
         </placeholder>
@@ -22,21 +22,23 @@
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76Y-p7-QR7">
                     <rect key="frame" x="80" y="607" width="214" height="41"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemTealColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <state key="normal" title="Log In">
-                        <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="LogInButtonClicked:" destination="-1" eventType="touchUpInside" id="oSK-Qp-2vh"/>
+                        <action selector="logInButtonClicked:" destination="-1" eventType="touchUpInside" id="oSK-Qp-2vh"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqE-pS-pXH">
                     <rect key="frame" x="80" y="656" width="214" height="41"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                    <state key="normal" title="Sign Up"/>
+                    <state key="normal" title="Sign Up">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
-                        <action selector="RegistrationButtonClicked:" destination="-1" eventType="touchUpInside" id="8cS-BH-gwc"/>
+                        <action selector="registrationButtonClicked:" destination="-1" eventType="touchUpInside" id="8cS-BH-gwc"/>
                     </connections>
                 </button>
             </subviews>
@@ -57,6 +59,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

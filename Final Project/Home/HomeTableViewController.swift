@@ -14,11 +14,17 @@ import Kingfisher
 
 class HomeTableViewController: UIViewController {
     
+    //MARK: Class variables
+    
     let photosCollection = Firestore.firestore().collection("mainPhotos")
     var categories = ["Animals","Architecture","Art","City","Design","Outdoors","Food","Space","Sport","People","Transport","Vintage"]
     var urls = [String]()
     
+    //MARK: IBOutlets
+    
     @IBOutlet weak var tableView: UITableView!
+    
+    //MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +47,9 @@ class HomeTableViewController: UIViewController {
         }
     }
 }
-    
+
+    //MARK: View setup
+
 extension HomeTableViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -67,6 +75,7 @@ extension HomeTableViewController: UITableViewDelegate, UITableViewDataSource {
         vc.hidesBottomBarWhenPushed = true
         vc.navigationItem.title = categories[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
+        tableView.deselectRow(at: indexPath, animated: true)
         print(vc.homeTitle)
         
     }

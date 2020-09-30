@@ -13,9 +13,13 @@ import FirebaseFirestore
 
 class PurchaseViewController: UIViewController {
     
+    //MARK: Class variables
+    
     var purchasedPhotoUrl = String()
     let userCollection = Firestore.firestore().collection("users")
 
+    //MARK: IBOutlets
+    
     @IBOutlet var creditCard: UITextField!
     @IBOutlet var expirationMonth: UITextField!
     @IBOutlet var expirationYear: UITextField!
@@ -23,12 +27,14 @@ class PurchaseViewController: UIViewController {
     @IBOutlet var errorLabel: UILabel!
     @IBOutlet var purchaseButton: UIButton!
     
+    //MARK: View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         hideKeyboardWhenTappedAround()
         errorLabel.alpha = 0
-
     }
+    
     @IBAction func purchaseButtonClicked(_ sender: Any) {
         let month = Int(expirationMonth.text ?? "00")
         let year = Int(expirationYear.text ?? "00")

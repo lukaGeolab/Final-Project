@@ -11,12 +11,18 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    //MARK: IBOutlets
+    
     @IBOutlet var welcomeButton: UIButton!
+    
+    //MARK: View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
     }
+    
+    //MARK: View setup
     
     @IBAction func welcomeButtonClicked(_ sender: Any) {
         let vc = SignInViewController(nibName: "SignInViewController", bundle: nil)
@@ -25,6 +31,7 @@ class ViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
 }
+
 extension UIViewController {
     func hideKeyboardWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))

@@ -13,21 +13,28 @@ import FirebaseFirestore
 
 class LogInViewController: UIViewController {
     
+    //MARK: Class variables
+    
     let db = Firestore.firestore()
+    
+    //MARK: IBOutlets
     
     @IBOutlet var emailTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     @IBOutlet var logInButton: UIButton!
     @IBOutlet var errorLabel: UILabel!
     
+    //MARK: View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.alpha = 0
         hideKeyboardWhenTappedAround()
+        logInButton.layer.cornerRadius = 25.0
+        logInButton.layer.borderWidth = 2
     }
     
     @IBAction func logInButtonClicked(_ sender: Any) {
-        // TODO: Validate Text Fields
         // Create cleaned versions of the text field
         let email = emailTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let password = passwordTextField.text!.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -36,7 +43,6 @@ class LogInViewController: UIViewController {
             if error != nil {
                 // Couldn't sign in
                 self.errorLabel.text = error!.localizedDescription
-                //                self.errorLabel.text = error!.localizedDescription
                 self.errorLabel.alpha = 1
             }
             else {

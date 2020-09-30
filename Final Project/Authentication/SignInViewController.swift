@@ -10,20 +10,21 @@ import UIKit
 
 class SignInViewController: UIViewController {
     
-    @IBOutlet var LogInButton: UIButton!
-    @IBOutlet var RegistrationButton: UIButton!
+    @IBOutlet var logInButton: UIButton!
+    @IBOutlet var registrationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        logInButton.layer.cornerRadius = 25.0
+        logInButton.layer.borderWidth = 2
     }
     
-    @IBAction func LogInButtonClicked(_ sender: Any) {
+    @IBAction func logInButtonClicked(_ sender: Any) {
         let vc = LogInViewController(nibName: "LogInViewController", bundle: nil)
         self.present(vc, animated: true, completion: nil)
-
     }
     
-    @IBAction func RegistrationButtonClicked(_ sender: Any) {
+    @IBAction func registrationButtonClicked(_ sender: Any) {
         let vc = SignUpViewController(nibName: "SignUpViewController", bundle: nil)
         self.present(vc, animated: true, completion: nil)
     }

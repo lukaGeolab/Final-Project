@@ -17,13 +17,11 @@ class FavoritesViewController: UIViewController {
     
     var favImagesUrl = [String]()
     
-    
     //MARK: IBOutlets
     
     @IBOutlet var favImageCollectionView: UICollectionView!
     
     //MARK: View life cycle
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,8 +47,6 @@ class FavoritesViewController: UIViewController {
         }
     }
 }
-
-
 
 extension FavoritesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

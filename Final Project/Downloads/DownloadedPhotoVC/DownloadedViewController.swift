@@ -9,16 +9,24 @@
 import UIKit
 
 class DownloadedViewController: UIViewController {
-
+    
+    //MARK: Class variables
+    
+    var downPhotoUrl = String()
+    
+    //MARK: IBOutlets
     
     @IBOutlet var downImageView: UIImageView!
-    var downPhotoUrl = String()
+    
+    //MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         downImageView.kf.setImage(with: URL(string: downPhotoUrl), placeholder: nil, options: [.transition(.fade(0.7))], progressBlock: nil)
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Share", style: .plain, target: self, action: #selector(shareClicked))
     }
+    
+    //MARK: View setup
     
     @objc func shareClicked() {
         let ac = UIActivityViewController(activityItems: [downImageView.image!], applicationActivities: nil)

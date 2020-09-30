@@ -13,15 +13,26 @@ import FirebaseFirestore
 
 class DownloadsViewController: UIViewController {
 
-    @IBOutlet var downImagesCollectionView: UICollectionView!
+    //MARK: Class variables
     
     var downImagesUrl = [String]()
+    
+    //MARK: IBOutlets
+    
+    @IBOutlet var downImagesCollectionView: UICollectionView!
+    
+    //MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         getDownloads()
     }
+    
+    //MARK: View setup
     
     func setupCollectionView() {
         downImagesCollectionView.register(UINib(nibName: "CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")

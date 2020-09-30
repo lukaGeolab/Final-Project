@@ -13,16 +13,22 @@ import FirebaseFirestore
 
 class UserViewController: UIViewController {
     
+    //MARK: IBOutlets
+    
     @IBOutlet var firstNameText: UITextView!
     @IBOutlet var lastNameText: UITextView!
     @IBOutlet var signOutButton: UIButton!
     @IBOutlet var firstNameLabel: UILabel!
     @IBOutlet var lastNameLabel: UILabel!
     
+    //MARK: View life cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUserLbls()
     }
+    
+    //MARK: View setup
     
     func configureUserLbls() {
         FavData.getCurrentUserData { [weak self] userData in

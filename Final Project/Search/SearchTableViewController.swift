@@ -10,10 +10,17 @@ import UIKit
 
 class SearchTableViewController: UITableViewController {
     
-    @IBOutlet var searchBar: UISearchBar!
+    //MARK: Class variables
+    
     var categories = ["Animals","Architecture","Art","City","Design","Outdoors","Food","Space","Sport","People","Transport","Vintage"]
     var searchedCategories = [String]()
     var searching = false
+    
+    //MARK: Class IBOutlets
+    
+    @IBOutlet var searchBar: UISearchBar!
+    
+    //MARK: View life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +28,9 @@ class SearchTableViewController: UITableViewController {
         tableView.register(UINib(nibName: "SearchTableViewCell", bundle: nil), forCellReuseIdentifier: "SearchTableViewCell")
         hideKeyboardWhenTappedAround()
     }
-
+    
+    //MARK: View setup
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if searching {
             return searchedCategories.count
@@ -32,15 +41,15 @@ class SearchTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         tableView.dequeueReusableCell(withIdentifier: "SearchTableViewCell", for: indexPath)
         
-        }
+    }
     override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-       if searching {
+        if searching {
             (cell as? SearchTableViewCell)?.textLabel?.text = searchedCategories[indexPath.row]
-        
+            
         } else {
             (cell as? SearchTableViewCell)?.textLabel?.text = categories[indexPath.row]
-
+            
         }
     }
     
