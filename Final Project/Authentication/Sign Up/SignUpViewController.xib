@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SignUpViewController" customModule="Final_Project" customModuleProvider="target">
+            <connections>
+                <outlet property="emailTextField" destination="inG-HB-p9s" id="y4F-X5-eCf"/>
+                <outlet property="errorLabel" destination="WRy-XP-7DC" id="GJX-cQ-FVa"/>
+                <outlet property="firstNameTextField" destination="Uwp-Cl-87B" id="aUY-7h-kjV"/>
+                <outlet property="lastNameTextField" destination="nvS-1x-zUe" id="t5K-ix-8GK"/>
+                <outlet property="passwordTextField" destination="EUY-4A-WvY" id="WWb-Xm-ush"/>
+                <outlet property="signUpButton" destination="gdh-L6-VK7" id="FKM-rJ-xu7"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="IW8-wH-TNX">
+                    <rect key="frame" x="16" y="102" width="343" height="470"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="First Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvU-vC-M5y">
+                            <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uwp-Cl-87B">
+                            <rect key="frame" x="0.0" y="60" width="343" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Last Name" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KQv-rF-yhh">
+                            <rect key="frame" x="0.0" y="120" width="343" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nvS-1x-zUe">
+                            <rect key="frame" x="0.0" y="180" width="343" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Email" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lJT-F1-tBm">
+                            <rect key="frame" x="0.0" y="240" width="343" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="inG-HB-p9s">
+                            <rect key="frame" x="0.0" y="300" width="343" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
+                        </textField>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Password" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yW-2P-z3X">
+                            <rect key="frame" x="0.0" y="360" width="343" height="50"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EUY-4A-WvY">
+                            <rect key="frame" x="0.0" y="420" width="343" height="50"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
+                        </textField>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="WRy-XP-7DC">
+                    <rect key="frame" x="16" y="654" width="343" height="29"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="29" id="ieU-Qc-a37"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gdh-L6-VK7">
+                    <rect key="frame" x="107" y="605" width="161" height="41"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="Sign Up"/>
+                    <connections>
+                        <action selector="signUpButtonClicked:" destination="-1" eventType="touchUpInside" id="OlF-v1-bye"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="gdh-L6-VK7" firstAttribute="top" secondItem="IW8-wH-TNX" secondAttribute="bottom" constant="33" id="1T8-dP-Wse"/>
+                <constraint firstItem="WRy-XP-7DC" firstAttribute="top" secondItem="gdh-L6-VK7" secondAttribute="bottom" constant="8" id="AC7-Vg-0uB"/>
+                <constraint firstItem="IW8-wH-TNX" firstAttribute="trailing" secondItem="WRy-XP-7DC" secondAttribute="trailing" id="CNM-w3-o4V"/>
+                <constraint firstItem="IW8-wH-TNX" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailingMargin" id="CtO-ey-t1a"/>
+                <constraint firstItem="IW8-wH-TNX" firstAttribute="leading" secondItem="WRy-XP-7DC" secondAttribute="leading" id="DGN-ff-YTM"/>
+                <constraint firstItem="IW8-wH-TNX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leadingMargin" id="OwF-1K-t7E"/>
+                <constraint firstItem="IW8-wH-TNX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="58" id="UnY-Pj-VGn"/>
+                <constraint firstItem="gdh-L6-VK7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="107" id="jqO-c8-5sa"/>
+                <constraint firstItem="gdh-L6-VK7" firstAttribute="centerX" secondItem="WRy-XP-7DC" secondAttribute="centerX" id="y9f-z5-5Er"/>
+            </constraints>
+            <point key="canvasLocation" x="-87" y="27"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

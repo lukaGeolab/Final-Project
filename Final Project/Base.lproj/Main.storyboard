@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ogd-Q1-1sp">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="pRT-my-c6R">
+            <objects>
+                <viewController id="ogd-Q1-1sp" customClass="ViewController" customModule="Final_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sbi-4w-gKm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgR-Rl-NGo">
+                                <rect key="frame" x="118" y="379" width="139" height="55"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Welcome"/>
+                                <connections>
+                                    <action selector="welcomeButtonClicked:" destination="ogd-Q1-1sp" eventType="touchUpInside" id="3ab-E7-WeL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1Ro-ez-c4r"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1Ro-ez-c4r" firstAttribute="bottom" secondItem="lgR-Rl-NGo" secondAttribute="bottom" priority="999" constant="344" id="1Oo-zK-rOj"/>
+                            <constraint firstItem="1Ro-ez-c4r" firstAttribute="trailing" secondItem="lgR-Rl-NGo" secondAttribute="trailing" priority="997" constant="118" id="Kdb-Ye-C48"/>
+                            <constraint firstItem="lgR-Rl-NGo" firstAttribute="top" secondItem="1Ro-ez-c4r" secondAttribute="top" priority="998" constant="335" id="wK4-1Y-3DB"/>
+                            <constraint firstItem="lgR-Rl-NGo" firstAttribute="leading" secondItem="1Ro-ez-c4r" secondAttribute="leading" priority="997" constant="118" id="xJ0-iS-742"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LjN-rt-bAd"/>
+                    <connections>
+                        <outlet property="welcomeButton" destination="lgR-Rl-NGo" id="UdJ-P7-JMc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9PW-Q7-aun" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-760.79999999999995" y="90.886699507389167"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
